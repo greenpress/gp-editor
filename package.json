@@ -1,5 +1,5 @@
 {
-  "name": "gp-editor",
+  "name": "@greenpress/gp-editor",
   "version": "1.0.0",
   "description": "Flavoured WYSIWYG content editor for Greenpress",
   "main": "index.js",
