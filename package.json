@@ -1,6 +1,6 @@
 {
   "name": "@greenpress/gp-editor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Flavoured WYSIWYG content editor for Greenpress",
   "main": "/dist/gp-editor.umd.js",
   "scripts": {
@@ -8,6 +8,7 @@
     "build": "npm run build:editor && npm run build:component:vue",
     "build:editor": "webpack --mode production",
     "build:component:vue": "vue-cli-service build --target lib --name gp-editor ./src/editor.js",
+    "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

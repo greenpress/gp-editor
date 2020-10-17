@@ -1,9 +1,10 @@
 <template>
     <ckeditor
             v-if="editor"
-            v-bind="$attrs"
             v-on="$listeners"
             :editor="editor"
+            :value="value"
+            :config="config"
             tag-name="textarea" />
 </template>
 
@@ -14,9 +15,16 @@
   export default {
     name: 'GpEditor',
     components: { ckeditor: CKEditor.component },
-    data: () =>  ({
+    props: ['value', 'config'],
+    data: () => ({
       editor: ClassicEditor,
     }),
+    watch: {
+      config: function () {
+        this.editor = null;
+        this.editor = ClassicEditor;
+      }
+    }
   };
 </script>
 
