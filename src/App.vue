@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <GpEditor :value="'hello world'" :config="{language: 'he'}" />
+        <GpEditor :value="'hello world'" :config="conf" />
     </div>
 </template>
 
@@ -11,7 +11,15 @@
     name: 'App',
     components: {
       GpEditor
-    }
+    },
+    data: () => ({
+      conf: {},
+    }),
+    created: function () {
+      setTimeout( () => {
+        this.conf = {language: 'he'};
+      }, 3000);
+    },
 }
 </script>
 

@@ -22,7 +22,7 @@
     watch: {
       config: function () {
         this.editor = null;
-        this.editor = ClassicEditor;
+        setTimeout(() => this.editor = ClassicEditor);
       }
     }
   };
