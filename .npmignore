@@ -1,3 +1,5 @@
 /*.*
 **/*.*
-!dist/gp-editor.*
+!/index.*.js
+!/index.*.map
+!translations/*.*
