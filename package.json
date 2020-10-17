@@ -7,7 +7,7 @@
     "serve": "vue-cli-service serve",
     "build": "npm run build:editor && npm run build:component:vue",
     "build:editor": "webpack --mode production",
-    "build:component:vue": "vue-cli-service build --target lib --name gp-editor ./src/components/GpEditor.vue",
+    "build:component:vue": "vue-cli-service build --target lib --name gp-editor ./src/editor.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
