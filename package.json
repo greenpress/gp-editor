@@ -7,8 +7,10 @@
     "serve": "vue-cli-service serve",
     "build": "npm run build:editor && npm run build:component:vue",
     "build:editor": "webpack --mode production",
-    "build:component:vue": "vue-cli-service build --target lib --name gp-editor ./src/editor.js",
-    "prepublishOnly": "npm run build",
+    "build:component:vue": "vue-cli-service build --target lib --name index ./src/editor.js",
+    "perpareMainFolder": "cp -r ./dist/* . && rm -rf ./dist && cp -r ./build/translations/* .",
+    "prepublishOnly": "npm run build && npm run perpareMainFolder",
+    "postpublish": "git clean -fd",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
