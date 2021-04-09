@@ -15,7 +15,7 @@
     data: () => ({
       conf: {},
     }),
-    created: function () {
+    created() {
       setTimeout( () => {
         this.conf = {language: 'he'};
       }, 3000);
