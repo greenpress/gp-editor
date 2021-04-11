@@ -1,6 +1,6 @@
 {
   "name": "@greenpress/gp-editor",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Flavoured WYSIWYG content editor for Greenpress",
   "main": "/dist/gp-editor.umd.js",
   "scripts": {
