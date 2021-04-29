@@ -1,6 +1,6 @@
 <template>
 	<div id="app">
-		<GpEditor :value="content" @input="content = $event" :config="conf"/>
+		<GpEditor v-model="content" :config="conf"/>
 
 		<h2>The HTML result:</h2>
 		<textarea class="preview" :value="content"/>

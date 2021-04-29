@@ -1,29 +1,41 @@
 <template>
-	<ckeditor
-			class="gp-editor"
-			v-if="editor"
-			v-on="$listeners"
-			:editor="editor"
-			:value="value"
-			:config="config"
-			tag-name="textarea"/>
+	<div v-if="editor">
+		<ckeditor
+				class="gp-editor"
+				:editor="editor"
+				v-model="value"
+				:config="config"
+				tag-name="textarea"/>
+	</div>
 </template>
 
 <script>
+import { computed, nextTick, ref, watch } from 'vue';
 import CKEditor from '@ckeditor/ckeditor5-vue';
 import ClassicEditor from '../../build/ckeditor';
 
 export default {
 	name: 'GpEditor',
 	components: { ckeditor: CKEditor.component },
-	props: [ 'value', 'config' ],
-	data: () => ({
-		editor: ClassicEditor,
-	}),
-	watch: {
-		config: function () {
-			this.editor = null;
-			setTimeout(() => this.editor = ClassicEditor);
+	props: [ 'modelValue', 'config' ],
+	emits: ['input', 'update:modelValue'],
+	setup(props, { emit }) {
+		const editor = ref(ClassicEditor);
+
+		watch(() => props.config, async () => {
+			editor.value = false;
+			await nextTick();
+			editor.value = ClassicEditor;
+		})
+		return {
+			editor,
+			value: computed({
+				get: () => props.modelValue,
+				set: (value) => {
+					emit('input', value)
+					emit('update:modelValue', value)
+				}
+			})
 		}
 	}
 };
