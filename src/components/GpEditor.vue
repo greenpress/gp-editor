@@ -1,6 +1,6 @@
 <template>
 	<div v-if="editor">
-		<ckeditor
+		<Ckeditor
 				class="gp-editor"
 				:editor="editor"
 				v-model="value"
@@ -11,12 +11,12 @@
 
 <script>
 import { computed, nextTick, ref, watch } from 'vue';
-import CKEditor from '@ckeditor/ckeditor5-vue';
 import ClassicEditor from '../../build/ckeditor';
+import Ckeditor from './Ckeditor';
 
 export default {
 	name: 'GpEditor',
-	components: { ckeditor: CKEditor.component },
+	components: { Ckeditor },
 	props: [ 'modelValue', 'config' ],
 	emits: ['input', 'update:modelValue'],
 	setup(props, { emit }) {
