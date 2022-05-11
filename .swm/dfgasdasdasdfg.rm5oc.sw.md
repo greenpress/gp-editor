@@ -9,18 +9,6 @@ file_blobs:
   src/components/GpEditor.vue: 7309a31647001e64652664776bbb961f07460c4d
 ---
 
-**dasdsadasssdfs dfs df**
-
-_sdfsdf sddsdsd_ `📄 package.json`
-
-## fsdfsd fsdfsd yrtyrtyrfsfdfdf sdf
-
-<br/>
-
-`📄 babel.config.js`
-
-<br/>
-
 `cli`[<sup id="Z1qEFUp">↓</sup>](#f-Z1qEFUp)
 
 <br/>
@@ -50,7 +38,6 @@ david is the king!dsds
 ```
 
 <br/>
-
 
 <!-- NOTE-swimm-snippet: the lines below link your snippet to Swimm -->
 ### 📄 webpack.config.js
